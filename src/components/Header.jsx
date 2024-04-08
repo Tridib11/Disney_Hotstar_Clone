@@ -1,9 +1,9 @@
 import React from 'react'
-
+import logo from './../assets/Images/logo.png'
 function Header() {
   return (
     <div>
-      Header
+      <img src={logo} className='w-[80px] md:w-[115p] object-cover' />
     </div>
   )
 }
