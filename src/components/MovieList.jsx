@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import GlobalApi from "../Services/GlobalApi";
 import MovieCard from "./MovieCard";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
+import HrMovieCard from "./HrMovieCard";
 
 function MovieList({ genreId, index_ }) {
   const [movieList, setMovieList] = useState([]);
@@ -40,7 +41,13 @@ function MovieList({ genreId, index_ }) {
         className="flex overflow-x-auto gap-8 scrollbar-hide scroll-smooth pt-5 px-3 pb-5"
       >
         {movieList.map((item, index) => (
-          <MovieCard key={index} movie={item} />
+          <>
+            {index_ % 3 == 0 ? (
+              <HrMovieCard movie={item} />
+            ) : (
+              <MovieCard key={index} movie={item} />
+            )}
+          </>
         ))}
       </div>
       <IoChevronForwardOutline
