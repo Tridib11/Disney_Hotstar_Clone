@@ -12,7 +12,11 @@ function MovieList({ genreId }) {
       setMovieList(resp.data.results);
     });
   };
-  return <div>MovieList</div>;
+  return (
+    <div>
+      
+    </div>
+  );
 }
 
 export default MovieList;
